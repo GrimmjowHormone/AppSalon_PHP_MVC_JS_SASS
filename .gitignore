@@ -1,0 +1,34 @@
+# === Dependencias ===
+/vendor/
+/node_modules/
+
+# === Builds y assets generados ===
+/public/build/
+/public/build/img/
+/dist/
+/coverage/
+
+# === Configuración local / IDE ===
+.idea/
+/.vscode/
+/.DS_Store
+Thumbs.db
+
+# === Archivos sensibles ===
+.env
+.env.local
+.env.*.local
+
+# === Logs y cachés ===
+*.log
+/storage/*.key
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/bootstrap/cache/*
+
+# === Otros ===
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

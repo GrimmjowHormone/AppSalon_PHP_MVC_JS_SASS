@@ -1,5 +1,6 @@
 // Fuentes
-$fuente_principal: 'Poppins', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&display=swap');
+$fuente_principal: "Encode Sans Semi Expanded", sans-serif;
 
 // Tamaño de Media Queries
 $telefono: 480px;
@@ -10,7 +11,7 @@ $desktop: 1024px;
 $azul: #0da6f3;
 $rojo: #cb0000;
 $verde:#329f00;
-$negro: #1a1b15;
+$negro: #140a04d4;
 
 $blanco: #FFFFFF;
 $gris: #e1e1e1;
