@@ -6,7 +6,8 @@
         "psr-4": {
             "MVC\\":"./",
             "Controllers\\":"./controllers",
-            "Model\\":"./models"
+            "Model\\":"./models",
+            "Classes\\":"./classes"
 
         }
     },
@@ -16,5 +17,8 @@
             "email": "david.d.belenom@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "phpmailer/phpmailer": "^6.10",
+        "vlucas/phpdotenv": "^5.6"
+    }
 }
