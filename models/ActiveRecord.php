@@ -1,6 +1,7 @@
 <?php
 
 namespace Model;
+
 #[\AllowDynamicProperties]
 class ActiveRecord
 {
@@ -131,6 +132,13 @@ class ActiveRecord
         return array_shift($resultado);
     }
 
+    /**
+     * Busca un registro por columna/valor.
+     *
+     * @param string $columna
+     * @param string $valor
+     * @return static|null  Retorna un objeto del modelo que hereda (ej. Usuario) o null si no existe
+     */
     public static function where($columna, $valor)
     {
         $query = "SELECT * FROM " . static::$tabla  . " WHERE {$columna} = '{$valor}'";
