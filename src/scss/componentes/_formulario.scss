@@ -17,5 +17,10 @@
         border:none;
         padding: calc(v.$separacion / 4);
         border-radius: 5px;
+
+        &:disabled{
+            background-color: lighten($color: #0c0c0c, $amount: 70%);
+            cursor:not-allowed;
+        }
     }
 }
