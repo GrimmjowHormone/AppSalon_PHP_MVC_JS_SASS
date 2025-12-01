@@ -27,7 +27,8 @@
             <div class="campo">
                 <label for="fecha">fecha</label>
                 <input type="date" id="fecha"
-                    placeholder="Tu fecha">
+                    placeholder="Tu fecha"
+                    min="<?php echo date('Y-m-d') ;?>">
             </div>
             <div class="campo">
                 <label for="hora">hora</label>
@@ -36,7 +37,7 @@
             </div>
         </form>
     </div>
-    <div id="paso-3" class="seccion">
+    <div id="paso-3" class="seccion contenido-resumen">
         <h2>Resumen</h2>
         <p class="text-center">Verifica que la información sea correcta</p>
     </div>
@@ -45,13 +46,12 @@
             &laquo; anterior
         </button>
         <button id="siguiente" class="boton">
-             siguiente &raquo;
+            siguiente &raquo;
         </button>
     </div>
 </div>
-<?php 
-    $script="
+<?php
+$script = "
     
     <script src='build/js/app.js'></script>
-    ";
-;?>
+    ";; ?>
