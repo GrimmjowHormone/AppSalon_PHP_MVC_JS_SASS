@@ -154,7 +154,6 @@ function seleccionarServicio(servicio) {
     }
 
 
-    console.log(cita)
 
 
 }
@@ -187,16 +186,13 @@ function seleccionarHora() {
         const horaCita = e.target.value;
         const hora = horaCita.split(":")[0];
         if (hora < 10 || hora >= 18) {
-            console.log('horas no validas')
             mostrarAlerta('Hora no valida', 'error','.formulario')
             e.target.value = '';
             cita.hora = '';
-            console.log(cita)
 
         } else {
             console.log('hora valida')
             cita.hora = horaCita;
-            console.log(cita)
         }
 
     })
@@ -300,6 +296,17 @@ function mostrarResumen() {
     resumen.appendChild(botonReservar);
 }
 
-function reservaCita() {
-    console.log('reservando cita...')
+async function reservaCita() {
+    const datos= new FormData();
+    datos.append('nombre',cita.nombre);
+
+    //peticion hacia la api
+    const url='http://localhost:3000/api/citas';
+    
+    const respuesta=await fetch(url,{
+        method:'POST',
+        body:datos
+    })
+    const resultado= await respuesta.json()
+    console.log(resultado)
 }
