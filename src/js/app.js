@@ -297,9 +297,17 @@ function mostrarResumen() {
 }
 
 async function reservaCita() {
-    const datos= new FormData();
-    datos.append('nombre',cita.nombre);
+    const {nombre,fecha,hora,servicios}=cita;
 
+    const idServicios=servicios.map(servicio=>servicio.id)
+
+    const datos= new FormData();
+    datos.append('nombre',nombre);
+    datos.append('fecha',fecha);
+    datos.append('hora',hora);
+    datos.append('servicios',idServicios);
+
+    console.log(...datos)
     //peticion hacia la api
     const url='http://localhost:3000/api/citas';
     
