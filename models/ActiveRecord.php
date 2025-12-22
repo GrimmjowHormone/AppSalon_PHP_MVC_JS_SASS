@@ -2,6 +2,9 @@
 
 namespace Model;
 
+use mysqli;
+use mysqli_sql_exception;
+
 #[\AllowDynamicProperties]
 class ActiveRecord
 {
@@ -167,12 +170,21 @@ class ActiveRecord
         $query .= join("', '", array_values($atributos));
         $query .= " ') ";
 
-        // Resultado de la consulta
-        $resultado = self::$db->query($query);
-        return [
-            'resultado' =>  $resultado,
-            'id' => self::$db->insert_id
-        ];
+
+        try {
+            // Resultado de la consulta
+            $resultado = self::$db->query($query);
+            return [
+                'resultado' =>  $resultado,
+                'id' => self::$db->insert_id
+            ];
+        } catch (mysqli_sql_exception $e) {
+            error_log('Error al crear'.$e->getMessage());
+            return [
+                'resultado'=>false,
+                'id'=>0
+            ];
+        }
     }
 
     // Actualizar el registro
