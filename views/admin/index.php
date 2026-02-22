@@ -8,7 +8,7 @@
                 Fecha
             </label>
             <input type="date" id="fecha"
-                name="fecha">
+                name="fecha" value="<?php echo $fecha ;?>">
         </div>
     </form>
 </div>
@@ -48,5 +48,8 @@
         }
         ?>
     </ul>
-
 </div>
+
+<?php 
+    $script="<script src='build/js/buscador.js'></script>"
+;?>
