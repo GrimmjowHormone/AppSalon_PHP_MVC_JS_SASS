@@ -9,5 +9,10 @@ function iniciarApp() {
 
 function buscarPorFecha(){
     const fechaInput=document.querySelector('#fecha');
-    fechaInput.addEventListener('input',func)
+    fechaInput.addEventListener('input',function(e){
+        const fechaSeleccionada=e.target.value;
+        console.log('Fecha seleccionada:',fechaSeleccionada);
+        window.location=`?fecha=${fechaSeleccionada}`;
+    })
+    
 }
