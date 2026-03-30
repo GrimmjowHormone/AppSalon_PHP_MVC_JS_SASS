@@ -65,8 +65,9 @@ class LoginController
             $alertas = $auth->validarEmail();
             if (empty($alertas)) {
                 $usuario = Usuario::where('email', $auth->email);
+               
                 if ($usuario && $usuario->confirmado) {
-
+                    
                     //generar un token 
                     $usuario->crearToken();
                     $usuario->guardar();

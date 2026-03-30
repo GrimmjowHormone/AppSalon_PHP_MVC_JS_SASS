@@ -52,9 +52,6 @@ class Email
         $mail = new PHPMailer();
         $mail->isSMTP();
         $mail->Host = 'sandbox.smtp.mailtrap.io';
-
-
-
         $mail->SMTPAuth = true;
         $mail->Port = 2525;
         $mail->Username = $_ENV['MAIL_USER'];
@@ -73,7 +70,16 @@ class Email
 
         $mail->Body = $contenido;
 
+        if(!$mail->send()) {
+            echo "Error al enviar: " . $mail->ErrorInfo;
+            exit;
+        } else {
+            echo "Correo enviado correctamente";
+            exit;
+        }
+
+
         //enviar correo
-        $mail->send();
+        // $mail->send();
     }
 }
