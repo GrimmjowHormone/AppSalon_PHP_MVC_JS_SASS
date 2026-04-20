@@ -5,3 +5,7 @@
 .boton{
     @include m.boton(#c27004d4,v.$blanco);
 }
+.boton-eliminar{
+    @include m.boton(#b84747,v.$blanco);
+    
+}
