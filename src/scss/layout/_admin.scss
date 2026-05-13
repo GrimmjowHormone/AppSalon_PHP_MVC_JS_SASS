@@ -1,4 +1,4 @@
-@use 'base/variables'as v;
+@use 'base/variables' as v;
 
 .citas {
     list-style: none;
@@ -7,10 +7,10 @@
     li {
         padding: 1rem;
         border-top: 1px solid #fff;
+
         p {
             font-weight: bold;
             color: v.$azul
-
         }
 
         span,
@@ -20,4 +20,8 @@
 
         }
     }
+}
+
+.servicios {
+    @extend .citas;
 }
